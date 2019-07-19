@@ -10,6 +10,20 @@ namespace CustomListProject
     {
         static void Main(string[] args)
         {
+
+            CustomList<int> listCustom = new CustomList<int>();
+
+            listCustom.Add(1);
+            listCustom.Add(1);
+            listCustom.Add(1);
+            listCustom.Add(1);
+            listCustom.Add(1);
+            listCustom.Add(1);
+            listCustom.Add(1);
+            listCustom.Add(1);
+            listCustom.Add(1);
+
+
         }
     }
 }
