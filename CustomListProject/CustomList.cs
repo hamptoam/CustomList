@@ -52,6 +52,11 @@ namespace CustomListProject
         public void Remove(T item)
         {
 
+            if (
+
+
+
+            count--;
         }
 
         //public static void Add(T item)
