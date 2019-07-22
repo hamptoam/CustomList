@@ -1,9 +1,10 @@
 ﻿namespace CustomListProject
 {
-    public class CustomList <T> 
+    public class CustomList<T>  
     {
         int count;
         T[] items;
+        T[] objects;
         int capacity;
         int removeAt;
         int i;
@@ -14,9 +15,7 @@
             
             set => items[i] = value;
             
-        } //trying this out may or may not work
-
-            
+        }
 
         public interface ICount
         {
@@ -46,10 +45,11 @@
             count = 0;
             capacity = 4;
             items = new T[capacity];
+            objects = new T[capacity];
             removeAt = i;
         }
 
-        public void Add(T item)
+        public void Add(T item, T Object)
         {
 
             if (count == capacity)
@@ -63,21 +63,18 @@
                 }
                 // point "items" to "arrayToResize" X
                 items = arrayToResize;
+                objects = arrayToResize;
+                
             }
 
             // add our item to the next open spot  in the "items" (count?)
             count++;
             items[count - 1] = item;
+            objects[count - 1] = Object; 
 
         }
 
-        /* public void Remove(T[] newArray)
-         {
-
-         }
-         */
-
-        public void Remove(T item)
+        public void Remove(T item, T Object)
         {
 
             if (count > 0)
@@ -96,11 +93,16 @@
             // add our item to the next open spot  in the "items" (count?)
             count--;
             items[count - 1] = item;
-
+            objects[count - 1] = Object; 
         }
         //Removing int from list but not sure if right int, find way to move integers over in the capacity
+        public void Zip()
+        {
 
-   
+
+
+        }
+
     }
 }
 
