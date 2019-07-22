@@ -8,9 +8,16 @@ namespace CustomListProject
 {
     public class CustomList<T>
     {
-        T[] items;
         int count;
+        T[] items;
         int capacity;
+        int removeAt;
+        int i;
+
+        public interface ICount
+        {
+            void Count();
+        }
 
         public int Count
         {
@@ -25,6 +32,7 @@ namespace CustomListProject
             count = 0;
             capacity = 4;
             items = new T[capacity];
+            removeAt = i;
         }
 
         public void Add(T item)
@@ -33,7 +41,7 @@ namespace CustomListProject
             if (count == capacity)
             {
                 capacity *= 2;
-                T[] arrayToResize = new T[capacity]; 
+                T[] arrayToResize = new T[capacity];
 
                 for (int i = 0; i < count; i++)
                 {
@@ -49,32 +57,70 @@ namespace CustomListProject
 
         }
 
-        public void Remove(T item)
+        public void Remove(T[] newArray)
         {
 
-            if (
-
-
-
-            count--;
         }
 
-        //public static void Add(T item)
-        //{
-        //    T[] arrayToResize = T[] items;
-        //    T[] elementsArray;
-        //    T arrayLength = arrayToResize.Count + elementsArray.count;
-        //    T[] resizedArray = new T[arrayLength];
+        public void Remove1(T item)
+        {
 
+            if (count > 0)
+            {
+               // capacity *= 2;
+                T[] arrayToShrink = new T[capacity - 1];
 
+                for (int i = capacity; i < count; i--)
+                {
+                    arrayToShrink[i] = items[i];
+                }
+                // point "items" to "arrayToResize" X
+                items = arrayToShrink;
+            }
 
-        //    for (int i = arrayToResize.count; i < arrayLength; i++)
-        //    {
-        //        resizedArray[i] = arrayToResize[counter];
+            // add our item to the next open spot  in the "items" (count?)
+            count--;
+            items[count - 1] = item;
 
-        //        counter++; 
-        //    }
-        //}
-
+        }
+        //Removing int from list but not sure if right int, find way to move integers over in the capacity
     }
 }
+
+ //   public void Remove(T[] items, T removeAt)
+   /// {
+      //     public T[] newArray = new T[items.Count]
+        //   {
+
+          // }
+         //}
+
+
+
+
+
+
+
+
+
+
+
+// Remove(T item)
+/*
+   public T[] ArrayToRemoveFrom( T[]arrayToResize, int removeThis)
+    {
+        T[] newArray = new T[arrayToResize.Count - 1];
+
+        int i = 0;
+        int b = 0;
+
+        while (i < arrayToResize.Count)
+
+        count--;
+
+               }
+
+}
+}*/
+
+

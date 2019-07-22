@@ -13,15 +13,10 @@ namespace CustomListProject
 
             CustomList<int> listCustom = new CustomList<int>();
 
+            listCustom.Add(0);
             listCustom.Add(1);
-            listCustom.Add(1);
-            listCustom.Add(1);
-            listCustom.Add(1);
-            listCustom.Add(1);
-            listCustom.Add(1);
-            listCustom.Add(1);
-            listCustom.Add(1);
-            listCustom.Add(1);
+            listCustom.Add(2);
+            listCustom.Remove1(2);
 
 
         }

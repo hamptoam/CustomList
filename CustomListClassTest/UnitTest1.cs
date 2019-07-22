@@ -138,12 +138,37 @@ namespace CustomListClassTest
 
         }
         [TestMethod]
-        Remove_RemoveFromEmptyLIst_CountRemain0()
+        public static void Remove_RemoveFromEmptyLIst_CountRemain0()
         {
-            CustomList<int> test = new CustomList<int>(); 
+            CustomList<int> test = new CustomList<int>();
+
+            test.Add(1);
+            test.Add(1);
+
+            
+        }
+
+        [TestMethod]
+
+      public static void Indexer_FindAnObjectInAList_GetRightObject()
+        {
+            CustomList<int> test = new CustomList<int>();
+
+            int expected = 1;
+            int actual;
 
 
+            test.Add(1);
+            test.Add(2);
+            test.Add(3);
+            test.Add(4);
+            test.Add(5);
+            test.Add(6);
+            test.Add(7);
+            test.Add(8);
 
+            actual = test.Count;
+            Assert.AreEqual(expected, actual);
 
         }
     }      
