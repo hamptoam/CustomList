@@ -145,12 +145,12 @@ namespace CustomListClassTest
             test.Add(1);
             test.Add(1);
 
-            
+
         }
 
         [TestMethod]
 
-      public static void Indexer_FindAnObjectInAList_GetRightObject()
+        public static void Indexer_FindAnObjectInAList_GetRightObject()
         {
             CustomList<int> test = new CustomList<int>();
 
@@ -171,5 +171,17 @@ namespace CustomListClassTest
             Assert.AreEqual(expected, actual);
 
         }
+
+        
+
+        [TestMethod]
+        public static void Zip_TieTwoArrays_ItemsWereZippedSuccessfully()
+        {
+            CustomList<int> test = new CustomList<int>();
+
+            
+            
+        }
+
     }      
 }

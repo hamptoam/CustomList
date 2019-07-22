@@ -82,14 +82,14 @@
 
             if (count > 0)
             {
-                // capacity *= 2;
+                
                 T[] arrayToShrink = new T[capacity - 1];
 
                 for (int i = capacity; i < count; i--)
                 {
                     arrayToShrink[i] = items[i];
                 }
-                // point "items" to "arrayToResize" X
+                
                 items = arrayToShrink;
             }
 
