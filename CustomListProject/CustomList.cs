@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CustomListProject
+﻿namespace CustomListProject
 {
-    public class CustomList<T>
+    public class CustomList <T> 
     {
         int count;
         T[] items;
@@ -14,6 +8,18 @@ namespace CustomListProject
         int removeAt;
         int i;
 
+    /*    public int this[int index]
+        {
+            get
+            {
+                return 
+            }
+            set
+            {
+
+            }
+        }
+*/
         public interface ICount
         {
             void Count();
@@ -24,6 +30,14 @@ namespace CustomListProject
             get
             {
                 return count;
+            }
+        }
+
+        public int Capacity
+        {
+            get
+            {
+                return capacity; 
             }
         }
 
@@ -57,17 +71,18 @@ namespace CustomListProject
 
         }
 
-        public void Remove(T[] newArray)
-        {
+        /* public void Remove(T[] newArray)
+         {
 
-        }
+         }
+         */
 
-        public void Remove1(T item)
+        public void Remove(T item)
         {
 
             if (count > 0)
             {
-               // capacity *= 2;
+                // capacity *= 2;
                 T[] arrayToShrink = new T[capacity - 1];
 
                 for (int i = capacity; i < count; i--)
@@ -84,26 +99,10 @@ namespace CustomListProject
 
         }
         //Removing int from list but not sure if right int, find way to move integers over in the capacity
+
+   
     }
 }
-
- //   public void Remove(T[] items, T removeAt)
-   /// {
-      //     public T[] newArray = new T[items.Count]
-        //   {
-
-          // }
-         //}
-
-
-
-
-
-
-
-
-
-
 
 // Remove(T item)
 /*
@@ -123,4 +122,4 @@ namespace CustomListProject
 }
 }*/
 
-
+    
