@@ -16,7 +16,7 @@ namespace CustomListProject
             listCustom.Add(0);
             listCustom.Add(1);
             listCustom.Add(2);
-            listCustom.Remove1(2);
+            listCustom.Remove(2);
 
 
         }

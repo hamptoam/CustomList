@@ -8,18 +8,16 @@
         int removeAt;
         int i;
 
-    /*    public int this[int index]
+        public T this[int i]
         {
-            get
-            {
-                return 
-            }
-            set
-            {
+            get => items[i];
+            
+            set => items[i] = value;
+            
+        } //trying this out may or may not work
 
-            }
-        }
-*/
+            
+
         public interface ICount
         {
             void Count();
@@ -40,6 +38,8 @@
                 return capacity; 
             }
         }
+
+         
 
         public CustomList()
         {
