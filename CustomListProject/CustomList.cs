@@ -1,4 +1,6 @@
-﻿namespace CustomListProject
+﻿using System;
+
+namespace CustomListProject
 {
     public class CustomList<T>  
     {
@@ -100,35 +102,20 @@
 
         public void Zip()
         {
+            
             int[] items = { 1, 2, 3, 4 };
             string[] objects = { "person", "place", "thing", "animal" };
 
-            var itemsAndObjects = items.Zip(objects, (first, second) => first + " " + second);
+            var itemsAndObjects = items.Add(objects, (first, second) => first + " " + second);
 
-            foreach (var item in itemsAndObjects)
-                Console.WriteLine(item);
+           // foreach (var item in itemsAndObjects)
+           // Console.WriteLine(item); 
 
+            //this was just an attempt will work on for resubmmision. 
         }
-
     }
 }
 
-// Remove(T item)
-/*
-   public T[] ArrayToRemoveFrom( T[]arrayToResize, int removeThis)
-    {
-        T[] newArray = new T[arrayToResize.Count - 1];
 
-        int i = 0;
-        int b = 0;
-
-        while (i < arrayToResize.Count)
-
-        count--;
-
-               }
-
-}
-}*/
 
     
