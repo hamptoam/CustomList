@@ -178,9 +178,21 @@ namespace CustomListClassTest
         public static void Zip_TieTwoArrays_ItemsWereZippedSuccessfully()
         {
             CustomList<int> test = new CustomList<int>();
+            test.Add(1);
+            test.Add(2);
+            test.Add(3);
+            test.Add(4);
 
-            
-            
+
+            CustomList<int> test2 = new CustomList<int>();
+            test2.Add(5);
+            test2.Add(6);
+            test2.Add(7);
+            test2.Add(8);
+
+            test.Zip(test2);
+
+            actual = 
         }
 
     }      
