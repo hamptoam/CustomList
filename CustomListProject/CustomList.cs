@@ -96,10 +96,17 @@
             objects[count - 1] = Object; 
         }
         //Removing int from list but not sure if right int, find way to move integers over in the capacity
+    
+
         public void Zip()
         {
+            int[] items = { 1, 2, 3, 4 };
+            string[] objects = { "person", "place", "thing", "animal" };
 
+            var itemsAndObjects = items.Zip(objects, (first, second) => first + " " + second);
 
+            foreach (var item in itemsAndObjects)
+                Console.WriteLine(item);
 
         }
 
