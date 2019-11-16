@@ -7,16 +7,14 @@ namespace CustomListProject
 {
     public class CustomList<T> : IEnumerable<T>
     {
-        public int count { get; set; }
-        private T[] items;
-        int removeAt;
-        int i;
+        public int Count { get; private set; }
+        private T[] Items;
 
         public T this[int i]
         {
-            get => items[i];
+            get => Items[i];
 
-            set => items[i] = value;
+            set => Items[i] = value;
         }
 
         public interface ICount
@@ -29,79 +27,67 @@ namespace CustomListProject
         {
             get
             {
-                return items.Length; 
+                return Items.Length; 
             }
         }
         public CustomList()
         {
-            count = 0;
-            items = new T[Capacity];
+            Count = 0;
+            Items = new T[Capacity];
         }
 
         public void Add(T item)
         {
-
-            if (count >= Capacity)
+            if (Count >= Capacity)
             {
-                Capacity *= 2;
-                T[] arrayToResize = new T[Capacity];
+               // Capacity *= 2;
+                T[] arrayToResize = new T[Capacity * 2];
 
-                for (int i = 0; i < count; i++)
+                for (int i = 0; i < Items.Length; i++)
                 {
-                    arrayToResize[i] = items[i];
+                    arrayToResize[i] = Items[i];
                 }
-                // point "items" to "arrayToResize" X
-                items = arrayToResize;
-              //  Objects = arrayToResize;
-
+                Items = arrayToResize;
             }
-
-            // add our item to the next open spot  in the "items" (count?)
-            count++;
-            items[count - 1] = item;
-            objects[count - 1] = Object;
-
+            Count++;
+            Items[Count] = item;
         }
 
-        public void Remove(T item)
+        public bool Remove(T item)
         {
-
-            if (count == 0)
+          
+            if (Count == 0)
             {
-                return;
+                return false;
             }
             else
             {
-                T[] arrayToShrink = items;
+                T[] arrayToShrink = new T[Capacity];
+                
+                //T valueToRemove = Items[i];
 
-                for (int i = Capacity; i > 0; i--)
+                for (int i = 0; i < Count; i++)
                 {
-                    if (arrayToShrink.Length > i)
+                    if (EqualityComparer<T>.Default.Equals(Items[i], item)); // Couldn't find other option to compare 2 T type objects
                     {
-
-
-
+                        Count--;
+                        return true;
                     }
 
                 }
-                items = arrayToShrink;
+
+                Items = arrayToShrink;
             }
 
-            // add our item to the next open spot  in the "items" (count?)
-            count--;
-            items[count - 1] = item;
-            //objects[count - 1] = object;
+            Count--;
+            Items[Count - 1] = item;
+            return false;
         }
-        //Removing int from list but not sure if right int, find way to move integers over in the capacity
-
-
-       // T[]  = new T[];
-
-
-        public void Zip(CustomList<T> listToAdd)
+     
+       public void Zip(CustomList<T> listToAdd)
         {
             
-            if (items.Length <= 0 || listToAdd.count <= 0)
+            if (Items.Length <= 0 || listToAdd.Count <= 0)
             {
                 return;
             }
@@ -111,10 +97,6 @@ namespace CustomListProject
 
 
             }
-
-           //T[] oldlist = new T[count];
-
-           // var itemsAndObjects = items.Add(objects, (first, second) => first + " " + second);
         }
 
         public void toString()
@@ -125,9 +107,9 @@ namespace CustomListProject
 
         public IEnumerator<T> GetEnumerator()
         {
-           for(int i = 0; i < count; i++)
+           for(int i = 0; i < Count; i++)
            {
-                yield return items[i];
+                yield return Items[i];
            }
         }
 
